@@ -30,7 +30,6 @@ export class PendingTasksPage {
   {
     console.log(lista);
 
-<<<<<<< HEAD
     this._navegador.push(AddListPage,{
 
       listToBeEdited:lista
@@ -38,12 +37,6 @@ export class PendingTasksPage {
 
     
 
-=======
-    this._navegador.push(EditListPage,{
-
-      listToBeEdited:lista
-    });
->>>>>>> refs/remotes/origin/master
   }
 
   /*we must navigate to the add list page to add list. ionic offers us a navigation system called 
