@@ -7,7 +7,6 @@ import { ContactPage } from '../pages/contact/contact';
 import { TabsPage } from '../pages/tabs/tabs';
 import { PendingTasksPage } from '../pages/pending-tasks/pending-tasks';
 import { FinishedTasksPage } from '../pages/finished-tasks/finished-tasks';
-import {EditListPage} from '../pages/edit-list/edit-list'
 import {AddListPage} from '../pages/add-list/add-list';
 
 import {ShowListsComponent} from '../components/show-lists/show-lists';
@@ -25,7 +24,6 @@ import { TasksService } from '../services/tasks.service';
     PendingTasksPage,
     FinishedTasksPage,
     AddListPage,
-    EditListPage,
     ShowListsComponent
   ],
   imports: [
@@ -40,7 +38,6 @@ import { TasksService } from '../services/tasks.service';
     PendingTasksPage,
     FinishedTasksPage,
     AddListPage,
-    EditListPage,
     ShowListsComponent
   ],
   providers: [
