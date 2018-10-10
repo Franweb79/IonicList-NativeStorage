@@ -31,6 +31,8 @@ export class AddListPage {
       ne
       letwList on this component, so now: */
 
+      /*if param is listNameValue, we create new list; if param is listToBeEdited, we edit,
+      (but don´t push, of course)*/
       if( this._navParams.get('listNameValue'))
       {
         const titulo:string =  this._navParams.get('listNameValue');
@@ -38,6 +40,9 @@ export class AddListPage {
         this.listToBeManagedOrAdded=new Lista(titulo);
 
         console.log("listnamevalue "+ this._navParams.get('listNameValue'));
+
+        this._tareas.arrayListas.push(this.listToBeManagedOrAdded);
+
 
 
 
@@ -54,16 +59,14 @@ export class AddListPage {
 
         this.listToBeManagedOrAdded=new Lista(titulo);
 
+
         let objLista=Object.assign(this.listToBeManagedOrAdded,this._navParams.get('listToBeEdited'));
 
-        console.log("objLista");
-        //console.log(objLista);
+       
       }
 
-      this._tareas.arrayListas.push(this.listToBeManagedOrAdded);
 
 
-      console.log(this.listToBeManagedOrAdded);
 
       this.addListToStorage(this.listToBeManagedOrAdded);
 
@@ -71,12 +74,7 @@ export class AddListPage {
   }
 
  
-  selectedList(lista:Lista)
-  {
-    
-    
-    console.log(typeof(lista));
-  }
+  
 
   validateItem()
   {

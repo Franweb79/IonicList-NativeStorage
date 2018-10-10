@@ -34,14 +34,12 @@ export class TasksService{
         {
             keyToGet=localStorage.key(i);
 
-            console.log ("LISTA "+i);
+            
 
            
             stringifiedList=localStorage.getItem(keyToGet);
 
-            console.log (stringifiedList);
-
-            console.log("------------");
+            
 
             parsedToObjectList=JSON.parse(stringifiedList);
             
@@ -51,8 +49,7 @@ export class TasksService{
 
         }
 
-        console.log ("listas");
-        console.log(this.arrayListas);
+       
     }
 
     /*getters and setters*/

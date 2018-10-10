@@ -29,6 +29,8 @@ export class PendingTasksPage {
   {
     console.log(lista);
 
+    console.log(this._tareas.arrayListas);
+
     this._navegador.push(AddListPage,{
 
       listToBeEdited:lista
