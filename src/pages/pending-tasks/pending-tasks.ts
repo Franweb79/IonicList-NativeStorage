@@ -3,7 +3,6 @@ import { TasksService } from '../../services/tasks.service';
 import {Lista} from '../../models/lista-model';
 import { NavController, AlertController } from 'ionic-angular';
 import {AddListPage} from '../add-list/add-list';
-import { EditListPage } from '../edit-list/edit-list';
 
 /**
  * Generated class for the PendingTasksComponent component.
