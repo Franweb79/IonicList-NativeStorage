@@ -122,16 +122,18 @@ export class AddListPage {
 
   updateCompletedTask(listToUpdate:Lista,item:ListaItem)
   {
-    if(item.isCompleted)
+    if(item._isCompleted)
     {
-      item.isCompleted=false;
+      item._isCompleted=false;
     }
     else
     {
-      item.isCompleted=true;
+      item._isCompleted=true;
     }
 
     this.addListToStorage(listToUpdate);
+
+    console.log(listToUpdate);
 
   }
 

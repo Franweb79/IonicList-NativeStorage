@@ -1,9 +1,9 @@
 
 /*model for the items on the list*/
 export class ListaItem{
-    private _description: string;
+    public _description: string;
   
-    private _isCompleted: boolean;
+    public _isCompleted: boolean;
     
 
     constructor( p_description:string){

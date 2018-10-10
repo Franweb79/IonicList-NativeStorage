@@ -35,8 +35,8 @@
           <!-- el item start gives a better positioning -->
 
           <!--if is comleted is false, we show empty square icon; if true, the checkbox squeare-->
-          <ion-icon name="square-outline" item-start  *ngIf="!item.isCompleted"></ion-icon>
-          <ion-icon name="checkbox-outline" item-start  *ngIf="item.isCompleted"></ion-icon>
+          <ion-icon name="square-outline" item-start  *ngIf="!item._isCompleted"></ion-icon>
+          <ion-icon name="checkbox-outline" item-start  *ngIf="item._isCompleted"></ion-icon>
 
           {{item._description}}
         </button>
