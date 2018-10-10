@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { TasksService } from '../../services/tasks.service';
 
+
 /**
  * Generated class for the FinishedTasksComponent component.
  *
@@ -9,7 +10,7 @@ import { TasksService } from '../../services/tasks.service';
  */
 @Component({
   selector: 'finished-tasks',
-  templateUrl: 'finished-tasks.html'
+  templateUrl: 'finished-tasks.html',
 })
 export class FinishedTasksPage {
 

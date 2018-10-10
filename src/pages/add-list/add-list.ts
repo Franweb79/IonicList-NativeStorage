@@ -122,6 +122,17 @@ export class AddListPage {
 
   updateCompletedTask(listToUpdate:Lista,item:ListaItem)
   {
+    //console.log ("iscompleted lista:");
+
+    listToUpdate.isCompleted=true; /*we suppose is true and, if any item is not completed,
+     set to false*/
+
+    listToUpdate.completedOn=new Date();
+
+    //console.log(listToUpdate.isCompleted);
+
+
+    
     if(item._isCompleted)
     {
       item._isCompleted=false;
@@ -130,6 +141,19 @@ export class AddListPage {
     {
       item._isCompleted=true;
     }
+
+    for(let i=0;i<listToUpdate.items.length;++i)
+    {
+      if(listToUpdate.items[i]._isCompleted == false)
+      {
+        listToUpdate.isCompleted=false;
+        listToUpdate.completedOn=null;
+        console.log("hay falso");
+        break;
+      }
+    }
+
+
 
     this.addListToStorage(listToUpdate);
 

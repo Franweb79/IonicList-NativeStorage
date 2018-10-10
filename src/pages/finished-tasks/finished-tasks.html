@@ -5,12 +5,12 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding>
   
 
-    <ion-list>
-      <button ion-item *ngFor="let lista of _tareas.arrayListas" (click)="editListItems(lista)">
-        {{ lista.list_title }}
+    <ion-list *ngFor="let lista of _tareas.arrayListas">
+      <button ion-item *ngIf="lista._isCompleted"  (click)="editListItems(lista)" [ngStyle]="{'border-bottom':'1px solid #51238d'}">
+        {{ lista._list_title }}
       </button>  
     </ion-list>
   
