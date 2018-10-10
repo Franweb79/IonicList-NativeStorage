@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>{{listToBeManagedOrAdded.list_title}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+
+    
+
+    <ion-item>
+      <ion-label floating>Enter New Item for the list <strong>{{listToBeManagedOrAdded.list_title}}</strong></ion-label>
+
+      <!--en vez de el name podia haber usado un ngmodel, y asi no tendria que usar el $event tampoco-->
+     <!-- <ion-input type="text" name="itemName" (keyup.enter)="validateItem($event)"></ion-input>-->
+      <ion-input type="text" [(ngModel)]="inputValue" (keyup.enter)="validateItem()"></ion-input>
+       <!--Y EL inputValue SERIA UNA PROPIEDAD EN EL TS QUE SE ESTA ESCUCHANDO CONTINUAMENTE 
+      -->
+    </ion-item>
+  </ion-list>
+
+  <ion-list *ngIf="listToBeManagedOrAdded.items.length>0">
+
+      <ion-list-header>
+          Remaining tasks
+    
+      </ion-list-header>
+
+      <ion-item-sliding *ngFor="let item of listToBeManagedOrAdded.items" class="animated fadeInDown">
+
+        <!--detail none removes arrow-->
+        <button ion-item detail-none  (click)="updateCompletedTask(listToBeManagedOrAdded,item)" >
+          <!-- el item start gives a better positioning -->
+
+          <!--if is comleted is false, we show empty square icon; if true, the checkbox squeare-->
+          <ion-icon name="square-outline" item-start  *ngIf="!item.isCompleted"></ion-icon>
+          <ion-icon name="checkbox-outline" item-start  *ngIf="item.isCompleted"></ion-icon>
+
+          {{item._description}}
+        </button>
+
+        <ion-item-options side="right">
+          <button ion-button (click)="deleteItem(item)" color="danger">
+              <ion-icon name="remove-circle"></ion-icon>
+
+                Remove
+          </button>
+        </ion-item-options>
+
+      </ion-item-sliding>
+    
+    
+  </ion-list>
+
+  <!--<ion-fab right bottom >
+    <button ion-fab color="primary" [ngStyle]="{'padding':'2.5em'}" [disabled]="listToBeManagedOrAdded.items.length===0">Save List</button>
+  </ion-fab>-->
+
+  
+
+</ion-content>

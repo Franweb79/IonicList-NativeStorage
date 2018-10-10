@@ -1,0 +1,24 @@
+
+
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Pending Tasks</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+
+  <!--<show-lists [arrayListas]="_tareas.arrayListas"></show-lists>-->
+  <ion-list>
+    <button ion-item *ngFor="let lista of _tareas.arrayListas" (click)="editList(lista)">
+      {{ lista._list_title }} 
+    </button>  
+  </ion-list>
+
+  <ion-fab bottom right>
+    <button ion-fab (click)="agregarLista()"><ion-icon name="add"></ion-icon></button>
+    
+  </ion-fab>
+  
+</ion-content>

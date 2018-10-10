@@ -1,0 +1,17 @@
+
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Finished Tasks</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  
+
+    <ion-list>
+      <button ion-item *ngFor="let lista of _tareas.arrayListas" (click)="editListItems(lista)">
+        {{ lista.list_title }}
+      </button>  
+    </ion-list>
+  
+</ion-content>
