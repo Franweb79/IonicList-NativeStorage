@@ -5,7 +5,7 @@ import { Lista } from '../models/lista-model';
 
 export class TasksService{
 
-    private _arrayListas: Lista[]=[];
+    public _arrayListas: Lista[]=[];
    
 
     constructor(){
@@ -28,6 +28,8 @@ export class TasksService{
         let keyToGet:string;
         let stringifiedList:string;
         let parsedToObjectList:Lista;
+
+        this.arrayListas=[];
 
 
         for (let i=0;i<localStorage.length;++i)

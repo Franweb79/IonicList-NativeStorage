@@ -20,8 +20,8 @@ export class PendingTasksPage {
   constructor(public _tareas:TasksService,
     private _navegador:NavController,
     private _alert:AlertController) {
-    console.log('Hello PendingTasksComponent Component');
-
+   
+      console.log("soy el constructor");
     this._tareas.getStorage();
   }
 

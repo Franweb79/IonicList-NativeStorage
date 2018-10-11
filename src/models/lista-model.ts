@@ -9,9 +9,9 @@ export class Lista{
     
     private _createdOn: Date;
     
-    private _completedOn: Date;
+    public _completedOn: Date;
     
-    private _isCompleted: boolean;
+    public _isCompleted: boolean;
   
     private _items: ListaItem[];
     

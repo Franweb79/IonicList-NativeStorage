@@ -21,6 +21,8 @@ export class AddListPage {
     private _navParams:NavParams,
     public _alert:AlertController) {
 
+      console.log("add-list constructort");
+
       /*if comes an argument in navparams -although there is no other way to reach this page-,
       */
 
@@ -98,8 +100,7 @@ export class AddListPage {
     else{
       const newItem=new ListaItem(this.inputValue);
 
-      console.log ("else");
-      console.log (newItem);
+     
 
       this.listToBeManagedOrAdded.items.push(newItem);
 
@@ -124,10 +125,10 @@ export class AddListPage {
   {
     //console.log ("iscompleted lista:");
 
-    listToUpdate.isCompleted=true; /*we suppose is true and, if any item is not completed,
+    listToUpdate._isCompleted=true; /*we suppose is true and, if any item is not completed,
      set to false*/
 
-    listToUpdate.completedOn=new Date();
+    listToUpdate._completedOn=new Date();
 
     //console.log(listToUpdate.isCompleted);
 
@@ -146,18 +147,31 @@ export class AddListPage {
     {
       if(listToUpdate.items[i]._isCompleted == false)
       {
-        listToUpdate.isCompleted=false;
-        listToUpdate.completedOn=null;
+        listToUpdate._isCompleted=false;
+        listToUpdate._completedOn=null;
         console.log("hay falso");
         break;
       }
     }
 
 
-
+    
     this.addListToStorage(listToUpdate);
 
+    /*console.log ("esta es listToUpdate");
+
+
     console.log(listToUpdate);
+
+    console.log ("esta es lista array tareas");
+    console.log(this._tareas.arrayListas);*/
+
+    //tp update arraytareas with the edited lists*/
+
+    this._tareas.getStorage();
+
+
+    
 
   }
 
@@ -167,6 +181,9 @@ export class AddListPage {
     this.listToBeManagedOrAdded.items.splice(this.listToBeManagedOrAdded.items.indexOf(item),1);
 
     this.addListToStorage(this.listToBeManagedOrAdded);
+
+    this._tareas.getStorage();
+
   }
 
   addListToStorage(lista:Lista){
