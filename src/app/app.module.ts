@@ -15,6 +15,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { TasksService } from '../services/tasks.service';
+import {CookiesService} from '../services/cookies-service';
+
 
 @NgModule({
   declarations: [
@@ -44,7 +46,8 @@ import { TasksService } from '../services/tasks.service';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    TasksService
+    TasksService,
+    CookiesService
   ]
 })
 export class AppModule {}
