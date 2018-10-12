@@ -37,12 +37,12 @@ export class MyApp {
 
       
     }
-    else if(this._cookiesService.getCookie('showedInstructions')=="yes")
+   /* else if(this._cookiesService.getCookie('showedInstructions')=="yes")
     {
       console.log ("cookie seteada");
       //nothing, this else if will be deleted
     }
-
+*/
     //this._cookiesService.setCookie('showedInstructions','yes');
   } //constructor
 
@@ -53,7 +53,7 @@ export class MyApp {
   {
     const alert=this._alertService.create({
       title: 'Instructions',
-      subTitle: 'slide lists or tasks to the left to delete them',
+      subTitle: '<strong>slide lists or tasks to the left to delete them</strong>',
       buttons: [ {
         text: 'Ok',
         handler: data => {
