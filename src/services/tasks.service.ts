@@ -1,6 +1,9 @@
 import {Injectable} from '@angular/core';
 import { Lista } from '../models/lista-model';
 
+import { Storage } from '@ionic/storage';
+
+
 @Injectable()
 
 export class TasksService{
@@ -8,7 +11,7 @@ export class TasksService{
     public _arrayListas: Lista[]=[];
    
 
-    constructor(){
+    constructor(public _storage:Storage){
         
      
 
@@ -52,6 +55,30 @@ export class TasksService{
         }
 
        
+    }
+
+    getNativeStorage()
+    {
+        this.arrayListas=[];
+
+        let arrayToStoreValuesOfStorage:Lista[]=[];
+
+        this._storage.forEach((value, key, index)=>{
+           // this.arrayListas.push(value);
+
+           this.arrayListas.push(value);
+
+           
+        }).then(data=>{
+            console.log("listas con el natiev storage");
+            console.log(this._arrayListas);
+    
+        });
+
+       
+
+       
+
     }
 
     /*getters and setters*/

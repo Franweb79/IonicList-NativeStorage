@@ -21,8 +21,13 @@ export class PendingTasksPage {
     private _navegador:NavController,
     private _alert:AlertController) {
    
-      console.log("soy el constructor");
-    this._tareas.getStorage();
+    console.log("soy el constructor");
+   // this._tareas.getStorage();
+
+   this._tareas.getNativeStorage();
+      
+   
+    
   }
 
   editList(lista:Lista)

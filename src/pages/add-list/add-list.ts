@@ -4,6 +4,9 @@ import {Lista} from '../../models/lista-model';
 import { NavParams, AlertController } from 'ionic-angular';
 import { ListaItem } from '../../models/lista-item.model';
 
+import { Storage } from '@ionic/storage';
+
+
 
 @Component({
   selector: 'page-add-list',
@@ -19,7 +22,8 @@ export class AddListPage {
   
   constructor(public _tareas:TasksService,
     private _navParams:NavParams,
-    public _alert:AlertController) {
+    public _alert:AlertController,
+    private _storage:Storage) {
 
       console.log("add-list constructort");
 
@@ -69,7 +73,7 @@ export class AddListPage {
 
 
 
-
+      
       this.addListToStorage(this.listToBeManagedOrAdded);
 
 
@@ -156,7 +160,20 @@ export class AddListPage {
 
 
     
-    this.addListToStorage(listToUpdate);
+    this.addListToStorage(listToUpdate).then(data=>{
+
+      /*as getNativeStorage has an async function inside (storage.forEach),
+      in order to show data properly we must wait until storage is correctly added
+      by addListToStorage. For that, I created a promise inside that method.
+
+      If not consumed, is ok.
+      */
+      this._tareas.getNativeStorage();
+
+    });
+
+
+    
 
     /*console.log ("esta es listToUpdate");
 
@@ -168,10 +185,17 @@ export class AddListPage {
 
     //tp update arraytareas with the edited lists*/
 
-    this._tareas.getStorage();
-
-
     
+
+      /*console.log("listas con el natiev storage");
+
+      
+      console.log(this._tareas._arrayListas);*/
+    
+   
+    //this._tareas.getStorage();
+
+   
 
   }
 
@@ -180,19 +204,34 @@ export class AddListPage {
 
     this.listToBeManagedOrAdded.items.splice(this.listToBeManagedOrAdded.items.indexOf(item),1);
 
-    this.addListToStorage(this.listToBeManagedOrAdded);
+    this.addListToStorage(this.listToBeManagedOrAdded).then(data=>{
 
-    this._tareas.getStorage();
+      this._tareas.getNativeStorage();
+
+    })
+
+    //this._tareas.getStorage();
 
   }
 
   addListToStorage(lista:Lista){
 
-    let stringifiedList:string;
+    //let stringifiedList:string;
 
-    stringifiedList=JSON.stringify(lista);
+   // stringifiedList=JSON.stringify(lista);
     
-    localStorage.setItem(lista.list_title,stringifiedList);
+   // localStorage.setItem(lista.list_title,stringifiedList);
+
+    //native storage
+
+    
+
+
+    return new Promise((resolve, reject)=>{
+
+      this._storage.set(lista.list_title,lista);
+      resolve();
+    });
 
   }
 

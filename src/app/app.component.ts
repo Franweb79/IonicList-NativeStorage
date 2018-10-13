@@ -6,6 +6,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { TabsPage } from '../pages/tabs/tabs';
 
 import {CookiesService} from '../services/cookies-service';
+import { Storage } from '@ionic/storage';
 
 
 @Component({
@@ -18,7 +19,8 @@ export class MyApp {
     statusBar: StatusBar, 
     splashScreen: SplashScreen,
     private _cookiesService:CookiesService,
-    private _alertService:AlertController) {
+    private _alertService:AlertController,
+    private _storage:Storage) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
@@ -26,9 +28,15 @@ export class MyApp {
       splashScreen.hide();
     });
 
-    console.log("main component");
+   /* console.log("native storage");
 
-    console.log(this._cookiesService.getCookie('showedInstructions'));
+    
+    this._storage.set('testKey', 'Testvalue');
+
+    this._storage.get('testKey').then((val) => {
+      console.log(`the value os testKey is ${val}`);
+    });*/
+   
     
     if(this._cookiesService.getCookie('showedInstructions')=="no cookie is setted")
     {

@@ -1,6 +1,8 @@
 {
   "name": "IonicList",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "ionic-angular",
   "pro_id": "046d20c9"
 }
