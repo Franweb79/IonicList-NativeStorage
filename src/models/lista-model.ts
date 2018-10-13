@@ -5,7 +5,7 @@ import { ListaItem } from "./lista-item.model";
 export class Lista{
     private _id_list: number;
    
-    private _list_title: string;
+    public _list_title: string;
     
     private _createdOn: Date;
     

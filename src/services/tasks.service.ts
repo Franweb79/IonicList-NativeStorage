@@ -80,6 +80,19 @@ export class TasksService{
 
     }
 
+    deleteList(lista:Lista)
+    {
+        this._storage.remove(lista._list_title).then(data=>{
+
+            this.getNativeStorage();
+            
+            console.log(`borrada lista: ${lista._list_title}`);
+
+
+        });
+
+    }
+
     /*getters and setters*/
 
     public get arrayListas(): Lista[] {
