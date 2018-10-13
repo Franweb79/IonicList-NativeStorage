@@ -12,26 +12,8 @@
   <!--<show-lists [arrayListas]="_tareas.arrayListas"></show-lists>-->
   <ion-list *ngFor="let lista of _tareas.arrayListas">
 
-    <ion-item-sliding>
-
-        <button ion-item *ngIf="!lista._isCompleted"  (click)="editList(lista)" [ngStyle]="{'border-bottom':'1px solid #51238d'}">
-            {{ lista._list_title }} 
-      
-            <!--if I don´t do these ngIf, throws error-->
-           <ion-note item-end *ngIf="lista._items && lista._items.length>0">{{lista._items.length}} items</ion-note>
-        </button>
-
-        <ion-item-options side="right">
-
-          <button ion-button (click)="foo(item)" color="danger">
-              <ion-icon name="remove-circle"></ion-icon>
-
-                Remove
-          </button>
-
-        </ion-item-options>
-
-    </ion-item-sliding>
+    <show-lists [lista]="lista"></show-lists>
+    
      
   </ion-list>
 

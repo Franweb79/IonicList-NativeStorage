@@ -30,20 +30,7 @@ export class PendingTasksPage {
     
   }
 
-  editList(lista:Lista)
-  {
-    console.log(lista);
-
-    console.log(this._tareas.arrayListas);
-
-    this._navegador.push(AddListPage,{
-
-      listToBeEdited:lista
-    });
-
-    
-
-  }
+ 
 
   /*we must navigate to the add list page to add list. ionic offers us a navigation system called 
   navcontroller*/
