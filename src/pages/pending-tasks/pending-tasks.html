@@ -13,6 +13,8 @@
   <ion-list *ngFor="let lista of _tareas.arrayListas">
     <button ion-item *ngIf="!lista._isCompleted"  (click)="editList(lista)" [ngStyle]="{'border-bottom':'1px solid #51238d'}">
       {{ lista._list_title }} 
+
+     <ion-note item-end>{{lista._items.length}} items</ion-note>
     </button>  
   </ion-list>
 

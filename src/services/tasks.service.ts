@@ -61,7 +61,6 @@ export class TasksService{
     {
         this.arrayListas=[];
 
-        let arrayToStoreValuesOfStorage:Lista[]=[];
 
         this._storage.forEach((value, key, index)=>{
            // this.arrayListas.push(value);

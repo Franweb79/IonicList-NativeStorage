@@ -162,13 +162,15 @@ export class AddListPage {
     
     this.addListToStorage(listToUpdate).then(data=>{
 
-      /*as getNativeStorage has an async function inside (storage.forEach),
+      /*as addliststorage has an async function inside (storage.set) , and getNativeStorage has an async function inside (storage.forEach),
       in order to show data properly we must wait until storage is correctly added
       by addListToStorage. For that, I created a promise inside that method.
 
-      If not consumed, is ok.
+      If not consumed on other calls of the code, is ok.
       */
-      this._tareas.getNativeStorage();
+
+     this._tareas.getNativeStorage();
+
 
     });
 
