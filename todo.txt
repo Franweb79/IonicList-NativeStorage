@@ -2,4 +2,6 @@ TODO por que se ordena alfabeticamente el storage?
 https://stackoverflow.com/questions/6183668/question-about-if-statement-in-function-in-javascript-how-if-the-if-statement
 TODO on addlist.ts haz que la validacion tb tenga que no puedan meter espacios en blanco y eso
 TODO entender en add list html por que ha habido que remover la clase "animated fadeInDown" al item sliding
-TODO mirar lo del filter
+TODO mirar lo del filter https://ed.team/blog/javascript-filtrar-elementos-de-un-array-con-filter
+TODO pipe impuro
+TODO VUELVE A MIRAR LO DEL RETURN CON CORCHETES O SIN ELLOS

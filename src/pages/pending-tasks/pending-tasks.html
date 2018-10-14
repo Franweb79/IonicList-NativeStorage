@@ -10,7 +10,7 @@
 
 
   <!--<show-lists [arrayListas]="_tareas.arrayListas"></show-lists>-->
-  <ion-list *ngFor="let lista of _tareas.arrayListas">
+  <ion-list *ngFor="let lista of _tareas.arrayListas | isCompletedOrNotFilter : false">
 
     <show-lists [lista]="lista"></show-lists>
     

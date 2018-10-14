@@ -18,6 +18,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { TasksService } from '../services/tasks.service';
 import {CookiesService} from '../services/cookies-service';
 
+//pipes
+
+import {IsCompletedOrNotFilterPipe} from '../pipes/is-completed-or-not-filter/is-completed-or-not-filter'
+
 
 @NgModule({
   declarations: [
@@ -27,7 +31,8 @@ import {CookiesService} from '../services/cookies-service';
     PendingTasksPage,
     FinishedTasksPage,
     AddListPage,
-    ShowListsComponent
+    ShowListsComponent,
+    IsCompletedOrNotFilterPipe
   ],
   imports: [
     BrowserModule,

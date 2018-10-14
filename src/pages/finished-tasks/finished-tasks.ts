@@ -10,6 +10,7 @@ import { NavController } from 'ionic-angular';
 import {AddListPage} from '../../pages/add-list/add-list';
 
 
+
 /**
  * Generated class for the FinishedTasksComponent component.
  *

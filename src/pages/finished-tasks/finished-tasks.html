@@ -8,28 +8,11 @@
 <ion-content padding>
   
 
-    <ion-list *ngFor="let lista of _tareas.arrayListas">
+    <ion-list *ngFor="let lista of _tareas.arrayListas | isCompletedOrNotFilter : true">
 
-        <ion-item-sliding>
+           
+        <show-lists [lista]="lista"></show-lists>
 
-            <button ion-item *ngIf="lista._isCompleted"  (click)="editList(lista)" [ngStyle]="{'border-bottom':'1px solid #51238d'}">
-                {{ lista._list_title }}
-            </button> 
-    
-            
-    
-            <ion-item-options side="right">
-    
-              <button ion-button (click)="_tareas.deleteList(lista)" color="danger">
-                  <ion-icon name="remove-circle"></ion-icon>
-    
-                    Remove
-              </button>
-    
-            </ion-item-options>
-    
-        </ion-item-sliding>
-        
     </ion-list>
   
 </ion-content>
