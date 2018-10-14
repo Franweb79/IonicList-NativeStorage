@@ -5,3 +5,5 @@ TODO entender en add list html por que ha habido que remover la clase "animated 
 TODO mirar lo del filter https://ed.team/blog/javascript-filtrar-elementos-de-un-array-con-filter
 TODO pipe impuro
 TODO VUELVE A MIRAR LO DEL RETURN CON CORCHETES O SIN ELLOS
+
+https://jaketrent.com/post/javascript-arrow-function-return-rules/
