@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import { Lista } from '../models/lista-model';
 
 import { Storage } from '@ionic/storage';
+import { AlertController } from 'ionic-angular';
 
 
 @Injectable()
@@ -11,7 +12,8 @@ export class TasksService{
     public _arrayListas: Lista[]=[];
    
 
-    constructor(public _storage:Storage){
+    constructor(public _storage:Storage,
+        public _alerta:AlertController){
         
      
 
@@ -93,6 +95,38 @@ export class TasksService{
 
     }
 
+    editListName(lista:Lista)
+    {
+        const promptAlert = this._alerta.create({
+
+
+            title: `New name for list ${lista._list_title}`,
+            message: "Enter a new name for this list",
+            inputs: [
+              {
+                name: 'newListName',
+                placeholder: 'new name'
+              },
+            ],
+            buttons: [
+              {
+                text: 'Cancel',
+                handler: data => {
+                  console.log('Cancel clicked');
+                }
+              },
+              {
+                text: 'Save',
+                handler: data => {
+                  console.log('Saved clicked');
+                }
+              }
+            ]
+
+        });//create
+
+        promptAlert.present();
+    }
     /*getters and setters*/
 
     public get arrayListas(): Lista[] {
