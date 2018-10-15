@@ -163,7 +163,7 @@ export class AddListPage {
       {
         listToUpdate._isCompleted=false;
         listToUpdate._completedOn=null;
-        console.log("hay falso");
+       // console.log("hay falso");
         break;
       }
     }
@@ -216,6 +216,27 @@ export class AddListPage {
 
     this.listToBeManagedOrAdded.items.splice(this.listToBeManagedOrAdded.items.indexOf(item),1);
 
+    /*we check now if the remaining items are checked or not, cause we
+
+    could have deleted a non clicked item (that means, list.isCompleted=false),
+    
+    the rest could be clicked, and we must set 
+
+    to completed true in that case*/
+
+    let totalItemsNotCompleted:ListaItem[]=this.listToBeManagedOrAdded.items.filter( (item:ListaItem)=>{
+
+      return item._isCompleted===false;
+    });
+
+    if(totalItemsNotCompleted.length==0)
+    {
+      console.log("no hay más falsos al borrar");
+
+      this.listToBeManagedOrAdded.isCompleted=true;
+      this.listToBeManagedOrAdded.createdOn=new Date();
+    }
+    
     this.addListToStorage(this.listToBeManagedOrAdded).then(data=>{
 
       this._tareas.getNativeStorage();
