@@ -61,7 +61,9 @@ export class MyApp {
   {
     const alert=this._alertService.create({
       title: 'Instructions',
-      subTitle: '<strong>slide lists or tasks to the left to delete them</strong>',
+      subTitle: `<ul><li><strong>Slide lists or tasks to the left to delete them</strong></li>
+        <li><strong>Slide lists to the right to edit their name</strong></li>
+      </ul>`,
       buttons: [ {
         text: 'Ok',
         handler: data => {
