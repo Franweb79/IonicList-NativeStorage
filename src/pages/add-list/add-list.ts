@@ -111,9 +111,19 @@ export class AddListPage {
       //remove the old written value to leave it empty
       this.inputValue=null;
 
+      //set _isCompleted to false because we have a new item without being clicked
+
+      this.listToBeManagedOrAdded._isCompleted=false;
+
+      this.listToBeManagedOrAdded.completedOn=null;
+
      // this._tareas.arrayListas.push(this.listToBeManagedOrAdded);
 
-     this.addListToStorage(this.listToBeManagedOrAdded);
+     this.addListToStorage(this.listToBeManagedOrAdded).then(data=>{
+
+        this._tareas.getNativeStorage();
+
+     });
 
 
     }
