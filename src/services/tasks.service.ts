@@ -84,7 +84,7 @@ export class TasksService{
 
     deleteList(lista:Lista)
     {
-        this._storage.remove(lista._list_title).then(data=>{
+        this._storage.remove(lista._id_list).then(data=>{
 
             this.getNativeStorage();
             
@@ -119,6 +119,20 @@ export class TasksService{
                 text: 'Save',
                 handler: data => {
                   console.log('Saved clicked');
+                this._storage.get(<string>lista._id_list).then( (listReceivedToChangeName:Lista)=>{
+                    
+                    
+                    
+                    listReceivedToChangeName._list_title=data.newListName;
+
+                    
+                    this._storage.set(listReceivedToChangeName._id_list,listReceivedToChangeName).then(data=>{
+                        this.getNativeStorage();//to have new storage with changed lists available on the arrayListas
+                    });
+
+
+                });
+                 // this._storage.get(<string>lista._id_list);
                 }
               }
             ]
@@ -127,6 +141,8 @@ export class TasksService{
 
         promptAlert.present();
     }
+
+
     /*getters and setters*/
 
     public get arrayListas(): Lista[] {

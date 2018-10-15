@@ -231,13 +231,13 @@ export class AddListPage {
 
     return new Promise((resolve, reject)=>{
 
-      this._storage.set(lista.list_title,lista);
+      this._storage.set(lista._id_list,lista);
       resolve();
     });
 
   }
 
- 
+  
 
   /*getters and setters*/
 
