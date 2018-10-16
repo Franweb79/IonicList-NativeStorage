@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, OnInit,OnDestroy } from '@angular/core';
 import { TasksService } from '../../services/tasks.service';
 import {Lista} from '../../models/lista-model';
-import { NavParams, AlertController } from 'ionic-angular';
+import { NavParams, AlertController, ViewController } from 'ionic-angular';
 import { ListaItem } from '../../models/lista-item.model';
 
 import { Storage } from '@ionic/storage';
+import { ShowTabsService } from '../../services/show-tabs-service';
 
 
 
@@ -12,20 +13,30 @@ import { Storage } from '@ionic/storage';
   selector: 'page-add-list',
   templateUrl: 'add-list.html',
 })
-export class AddListPage {
+
+
+export class AddListPage implements OnInit,OnDestroy {
 
   private _listToBeManagedOrAdded: Lista;
 
   private _inputValue: string;
+
+  
  
  
   
   constructor(public _tareas:TasksService,
     private _navParams:NavParams,
     public _alert:AlertController,
-    private _storage:Storage) {
+    private _storage:Storage,
+    private _viewController:ViewController,
+    private _tabs:ShowTabsService) {
 
-      console.log("add-list constructort");
+     
+
+      console.log(this._viewController.name);
+
+      this._tabs.textToEnableTabs=this._viewController.name;
 
       /*if comes an argument in navparams -although there is no other way to reach this page-,
       */
@@ -79,6 +90,15 @@ export class AddListPage {
 
   }
 
+
+  ngOnInit(){
+
+  }
+
+  ngOnDestroy()
+  {
+    this._tabs.textToEnableTabs="";
+  }
  
   
 
@@ -286,4 +306,6 @@ export class AddListPage {
   public set inputValue(value: string) {
     this._inputValue = value;
   }
+
+  
 }

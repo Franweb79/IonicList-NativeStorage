@@ -4,6 +4,8 @@ import { ContactPage } from '../contact/contact';
 import { PendingTasksPage } from '../pending-tasks/pending-tasks';
 import { FinishedTasksPage } from '../finished-tasks/finished-tasks';
 
+import { ShowTabsService } from '../../services/show-tabs-service';
+
 @Component({
   templateUrl: 'tabs.html'
 })
@@ -13,7 +15,7 @@ export class TabsPage {
   tab2Root = FinishedTasksPage;
   tab3Root = ContactPage;
 
-  constructor() {
+  constructor(private _tabs:ShowTabsService) {
 
   }
 }

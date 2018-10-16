@@ -7,6 +7,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 import {CookiesService} from '../services/cookies-service';
 import { Storage } from '@ionic/storage';
+import { ShowTabsService } from '../services/show-tabs-service';
 
 
 @Component({
@@ -20,7 +21,9 @@ export class MyApp {
     splashScreen: SplashScreen,
     private _cookiesService:CookiesService,
     private _alertService:AlertController,
-    private _storage:Storage) {
+    private _storage:Storage,
+    private _tabs:ShowTabsService) {
+
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.

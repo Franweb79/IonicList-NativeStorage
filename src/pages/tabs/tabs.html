@@ -1,5 +1,9 @@
 <ion-tabs color="primary">
-  <ion-tab [root]="tab1Root" tabTitle="Pending Tasks" tabIcon="home"></ion-tab>
-  <ion-tab [root]="tab2Root" tabTitle="Finished Tasks" tabIcon="information-circle"></ion-tab>
-  <ion-tab [root]="tab3Root" tabTitle="Contact Author" tabIcon="contacts"></ion-tab>
+
+  <!-- textToEnableTabs is a string to disable tabs when we are on list editing page,
+
+   this way we force to use arrow to go back-->
+  <ion-tab [root]="tab1Root" [enabled]="  _tabs.textToEnableTabs !='AddListPage' " tabTitle="Pending Tasks" tabIcon="home"></ion-tab>
+  <ion-tab [root]="tab2Root" [enabled]="  _tabs.textToEnableTabs !='AddListPage' " tabTitle="Finished Tasks" tabIcon="information-circle"></ion-tab>
+  <ion-tab [root]="tab3Root" [enabled]="  _tabs.textToEnableTabs !='AddListPage' " tabTitle="Contact Author" tabIcon="contacts"></ion-tab>
 </ion-tabs>

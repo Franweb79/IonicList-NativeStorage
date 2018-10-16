@@ -17,6 +17,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { TasksService } from '../services/tasks.service';
 import {CookiesService} from '../services/cookies-service';
+import { ShowTabsService } from '../services/show-tabs-service';
+
 
 //pipes
 
@@ -54,7 +56,8 @@ import {IsCompletedOrNotFilterPipe} from '../pipes/is-completed-or-not-filter/is
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     TasksService,
-    CookiesService
+    CookiesService,
+    ShowTabsService
   ]
 })
 export class AppModule {}
