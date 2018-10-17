@@ -1,11 +1,16 @@
 import { Component, OnInit,OnDestroy } from '@angular/core';
-import { TasksService } from '../../services/tasks.service';
+
 import {Lista} from '../../models/lista-model';
-import { NavParams, AlertController, ViewController } from 'ionic-angular';
 import { ListaItem } from '../../models/lista-item.model';
+
+
+import { NavParams, AlertController, ViewController, Config, Nav, Platform } from 'ionic-angular';
+
 
 import { Storage } from '@ionic/storage';
 import { ShowTabsService } from '../../services/show-tabs-service';
+import { TasksService } from '../../services/tasks.service';
+
 
 
 
@@ -36,7 +41,9 @@ export class AddListPage implements OnInit,OnDestroy {
 
       console.log(this._viewController.name);
 
-      this._tabs.textToEnableTabs=this._viewController.name;
+      this._tabs.isTabsClickable=false;
+      
+      //this._tabs.textToEnableTabs=this._viewController.name;
 
       /*if comes an argument in navparams -although there is no other way to reach this page-,
       */
@@ -98,6 +105,7 @@ export class AddListPage implements OnInit,OnDestroy {
   ngOnDestroy()
   {
     this._tabs.textToEnableTabs="";
+    this._tabs.isTabsClickable=true;
   }
  
   
