@@ -13,7 +13,7 @@ import { ShowTabsService } from '../services/show-tabs-service';
 @Component({
   templateUrl: 'app.html'
 })
-export class MyApp {
+export class SimpleListManagerApp {
   rootPage:any = TabsPage;
 
   constructor(platform: Platform, 

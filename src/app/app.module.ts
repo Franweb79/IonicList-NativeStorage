@@ -1,7 +1,7 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
-import { MyApp } from './app.component';
+import { SimpleListManagerApp } from './app.component';
 import { IonicStorageModule } from '@ionic/storage';
 
 import { ContactPage } from '../pages/contact/contact';
@@ -27,7 +27,7 @@ import {IsCompletedOrNotFilterPipe} from '../pipes/is-completed-or-not-filter/is
 
 @NgModule({
   declarations: [
-    MyApp,
+    SimpleListManagerApp,
     ContactPage,
     TabsPage,
     PendingTasksPage,
@@ -38,12 +38,12 @@ import {IsCompletedOrNotFilterPipe} from '../pipes/is-completed-or-not-filter/is
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp),
+    IonicModule.forRoot(SimpleListManagerApp),
     IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp,
+    SimpleListManagerApp,
     ContactPage,
     TabsPage,
     PendingTasksPage,
