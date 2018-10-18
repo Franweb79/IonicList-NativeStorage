@@ -3,7 +3,6 @@ https://stackoverflow.com/questions/6183668/question-about-if-statement-in-funct
 TODO on addlist.ts haz que la validacion tb tenga que no puedan meter espacios en blanco y eso
 TODO entender en add list html por que ha habido que remover la clase "animated fadeInDown" al item sliding
 TODO mirar lo del filter https://ed.team/blog/javascript-filtrar-elementos-de-un-array-con-filter
-TODO pipe impuro
 TODO VUELVE A MIRAR LO DEL RETURN CON CORCHETES O SIN ELLOS
 TODO como he hecho lo de la firma: crear el apk, firmarlo llevandolo a la misma carpeta donde esta el bin del jdk y poder usar el keytool
 TODO contr key Fran*2017, usar la consola en modo admin y los comandos con .\
@@ -15,3 +14,5 @@ y -keyalg RSA -keysize 2048 -validity 10000
 release-key.keystore app-release-unsigned.apk myNewKey
 
 https://jaketrent.com/post/javascript-arrow-function-return-rules/
+
+todo diferencia number y Number ts
