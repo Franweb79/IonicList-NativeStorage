@@ -1,5 +1,5 @@
 https://stackoverflow.com/questions/6183668/question-about-if-statement-in-function-in-javascript-how-if-the-if-statement
-TODO mirar lo del filter https://ed.team/blog/javascript-filtrar-elementos-de-un-array-con-filter
+
 TODO VUELVE A MIRAR LO DEL RETURN CON CORCHETES O SIN ELLOS
 
 
